@@ -1,0 +1,36 @@
+header {
+  width: 100%;
+  position: fixed;
+}
+
+.nav {
+  padding: 5px 90px 5px 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 300;
+  background-color: white;
+}
+
+.nav-ul {
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+}
+
+.nav-li {
+  list-style: none;
+}
+
+.nav-hr {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 2px;
+  border: none;
+  background-color: #EAEAEA;
+}

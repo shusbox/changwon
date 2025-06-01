@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/css/nav.css">
+
+  <style>
+    /* 프리텐다드 */ @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header id="nav"></header>
+</body>
+<script>
+  function loadHTML(id, url, jsPath = null) {
+    fetch(url)
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById(id).innerHTML = data;
+
+        if (jsPath) {
+          const script = document.createElement('script');
+          script.src = jsPath;
+          document.body.appendChild(script);
+        }
+      });
+  }
+
+  loadHTML("nav", "/html/nav.html");
+</script>
+</html>
