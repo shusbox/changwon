@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 창원 </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> 창원 </title>
 
-    <link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/animation.css">
+	<link rel="stylesheet" href="/css/main.css">
 
-    <style>
-        /* 프리텐다드 */ @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+	<style>
+		/* 프리텐다드 */ @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-        html, body {
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Pretendard', sans-serif;
+		}
+	</style>
 </head>
 <body>
-    <main>
-        <div id="video">
-            <!-- 화면 크기 조절하니깐 튀어나감 ㅠ -->
-            <video src="/resource/main_video.mp4" autoplay muted loop></video>
-        </div>
-    </main>
+	<main style="display: flex; flex-direction: column; align-items: center;">
+		<div id="video">
+			<!-- 화면 크기 조절하니깐 튀어나감 ㅠ -->
+			<video src="/resource/main_video.mp4" autoplay muted loop></video>
+		</div>
+		<ul class="nav">
+			<li onclick="location.href='/html/font.html'"> 역사 </li>
+			<li onclick="location.href='/html/attraction.html'"> 관광지 </li>
+			<li onclick="location.href='/html/specialties.html'"> 특산물 </li>
+			<li onclick="location.href='/html/festivities.html'"> 축제 </li>
+			<li onclick="location.href='/html/peoplefrom.html'"> 출신 인물 </li>
+			<li onclick="location.href='/html/font.html'"> 창원단감서체 </li>
+		</ul>
+	</main>
 </body>
 </html>
