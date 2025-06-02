@@ -1,0 +1,69 @@
+.card-container {
+  margin: 400px 130px 0 130px;
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  transition: 0.25s;
+  width: 400px;
+  max-height: 700px;
+  margin: 0 15px 0 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  border: solid 2px #EAEAEA;
+  flex-shrink: 0;
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  font-weight: 300;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.tag-title {
+  color: #3B92B2;
+}
+
+.tag-list {
+  cursor: default;
+  list-style: none;
+  padding: 5px 12px 5px 12px;
+  color: white;
+  font-size: 15px;
+  font-weight: 200;
+  border-radius: 5px;
+  background-color: #3B92B2;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+
+  max-width: 100%;          /* 너비 제한을 부모 기준으로 설정 */
+  box-sizing: border-box;
+}
+
+/* animation */
+.card:hover {
+  overflow-y: auto;
+  transition: 0.25s;
+  transform: translateY(-150px);
+}
