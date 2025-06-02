@@ -1,5 +1,6 @@
+/* style */
 .card-container {
-  margin: 400px 130px 0 130px;
+  margin: 100px 130px;
   display: flex;
   flex-direction: row;
 }
@@ -65,5 +66,6 @@ ul {
 .card:hover {
   overflow-y: auto;
   transition: 0.25s;
-  transform: translateY(-150px);
+  box-shadow: 0 0 20px #dfdfdf;
+  transform: translateY(-50px);
 }
