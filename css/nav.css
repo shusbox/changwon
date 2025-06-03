@@ -1,3 +1,4 @@
+/* style */
 header {
   z-index: 100;
   width: 100%;
@@ -25,7 +26,9 @@ header {
 }
 
 .nav-li {
+  transition: 0.15s;
   list-style: none;
+  color: #a9a9a9;
 }
 
 .nav-hr {
@@ -35,4 +38,10 @@ header {
   height: 2px;
   border: none;
   background-color: #EAEAEA;
+}
+
+/* animation */
+.nav-li:hover {
+  transition: 0.15s;
+  color: black;
 }

@@ -1,4 +1,8 @@
 /* style */
+#specialties {
+  color: black;
+}
+
 .title-container {
   height: 180px;
   display: flex;
