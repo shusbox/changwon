@@ -60,5 +60,6 @@
 /* animation */
 .card:hover {
   transition: 0.2s;
+  box-shadow: 0px 0px 15px #e6e6e6;
   transform: scale(1.05);
 }
