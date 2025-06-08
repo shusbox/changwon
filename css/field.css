@@ -1,8 +1,4 @@
 /* style */
-#attraction {
-  color: black;
-}
-
 .title-img {
   width: 100%;
   height: 180px;
@@ -96,9 +92,6 @@ ul {
   word-break: keep-all;
   overflow-wrap: break-word;
   white-space: normal;
-
-  max-width: 100%;          /* 너비 제한을 부모 기준으로 설정 */
-  box-sizing: border-box;
 }
 
 /* modal */
