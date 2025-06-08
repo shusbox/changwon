@@ -116,6 +116,7 @@ ul {
   margin: 20px 120px;
   padding: 50px;
   display: flex;
+  align-items: center;
   position: relative;
   border-radius: 25px;
   background-color: white;

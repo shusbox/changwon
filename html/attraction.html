@@ -399,31 +399,7 @@
     </div>
   </main>
 
-  <script>
-    // nav, html 불러오기
-    function loadHTML(id, url, jsPath = null) {
-      fetch(url)
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById(id).innerHTML = data;
-
-          if (jsPath) {
-            const script = document.createElement('script');
-            script.src = jsPath;
-            document.body.appendChild(script);
-          }
-        });
-    }
-    loadHTML("nav", "/html/nav.html");
-
-    // 클릭이벤트
-    function modalopen(id) {
-      document.getElementById(id).style.display = 'block';
-    };
-
-    function modalclose(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-  </script>
+  <script src="/script/loadHTML.js"></script>
+  <script src="/script/modal.js"></script>
 </body>
 </html>
