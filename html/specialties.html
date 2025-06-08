@@ -6,6 +6,7 @@
   <title> 창원 / 특산물 </title>
 
   <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/specialties.css">
 
   <style>
@@ -133,6 +134,8 @@
     </div>
   </main>
 
+  <footer id="footer"></footer>
+
   <script>
     function loadHTML(id, url, jsPath = null) {
       fetch(url)
@@ -149,6 +152,7 @@
     }
 
     loadHTML("nav", "/html/nav.html");
+    loadHTML("footer", "/html/footer.html");
   </script>
 </body>
 </html>

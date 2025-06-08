@@ -6,6 +6,7 @@
   <title> 창원 / 출신인물 </title>
 
   <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/peoplefrom.css">
 
   <style>
@@ -140,6 +141,7 @@
           <p> 최현준(도란) </p>
           <div class="spot-container">
             <p class="spot"> LOL 프로게이머 </p>
+            <p class="spot"> T1 </p>
             <p class="spot"> TOP </p>
           </div>
         </div>
@@ -221,6 +223,8 @@
     </div>
   </main>
 
+  <footer id="footer"></footer>
+
   <script>
     function loadHTML(id, url, jsPath = null) {
       fetch(url)
@@ -237,6 +241,7 @@
     }
 
     loadHTML("nav", "/html/nav.html");
+    loadHTML("footer", "/html/footer.html");
   </script>
 </body>
 </html>
