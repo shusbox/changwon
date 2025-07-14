@@ -61,6 +61,22 @@
   font-weight: 300;
 }
 
+.card button {
+  transition: 0.2s;
+  cursor: pointer;
+  margin-top: 30px;
+  padding: 4px 8px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  background-color: #3b92b2;
+}
+
+.card button:hover {
+  transition: 0.2s;
+  background-color: #226178;
+}
+
 /* animation */
 .card:hover {
   transition: 0.2s;

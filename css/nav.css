@@ -22,7 +22,7 @@ header {
   padding: 0;
   display: flex;
   flex-direction: row;
-  gap: 80px;
+  gap: 48px;
 }
 
 .nav-li {
@@ -38,6 +38,34 @@ header {
   height: 2px;
   border: none;
   background-color: #EAEAEA;
+}
+
+#sign-up-btn {
+  transition: 0.2s;
+  cursor: pointer;
+  color: #3b92b2;
+  border: none;
+  background-color: white;
+}
+
+#sign-up-btn:hover {
+  transition: 0.2s;
+  color: #226178;
+}
+
+#login-btn {
+  transition: 0.2s;
+  cursor: pointer;
+  padding: 6px 12px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  background-color: #3b92b2;
+}
+
+#login-btn:hover {
+  transition: 0.2s;
+  background-color: #226178;
 }
 
 /* animation */
