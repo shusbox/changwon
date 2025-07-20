@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 로그인 </title>
+
+  <link rel="icon" href="/resource/icon/favicon.svg">
+  
+  <link rel="stylesheet" href="/css/header_auth.css">
+  <link rel="stylesheet" href="/css/login.css">
+
+  <style>
+    html, body {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="header_auth"></div>
+
+  <main>
+    <div id="title">
+      <h1> 로그인 </h1>
+      <p> 회원 전용 기능을 사용하려면 로그인해주세요 </p>
+    </div>
+    <div id="login-container">
+      <div id="login-with-container">
+        <div class="login-with">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" style="display: block;">
+            <path fill="#595959" d="M5 10a5 5 0 0 0 9.716 1.667H10V8.333h8.17v3.334h-.003a8.333 8.333 0 1 1-1.265-6.34L14.17 7.24A5 5 0 0 0 5 10Z"/>
+          </svg>
+          <p> 구글로 로그인하기 </p>
+        </div>
+        <div class="login-with">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" style="display: block;">
+            <path fill="#595959" d="M14.208 16.9c-.816.792-1.708.667-2.566.292-.909-.384-1.742-.4-2.7 0-1.2.516-1.834.366-2.55-.292-4.067-4.192-3.467-10.575 1.15-10.808 1.125.058 1.908.616 2.566.666.984-.2 1.925-.775 2.975-.7 1.259.1 2.209.6 2.834 1.5-2.6 1.559-1.984 4.984.4 5.942-.475 1.25-1.092 2.492-2.117 3.408l.008-.008ZM10.025 6.042C9.9 4.183 11.408 2.65 13.142 2.5c.241 2.15-1.95 3.75-3.117 3.542Z"/>
+          </svg>
+          <p> 애플로 로그인하기</p>
+        </div>
+      </div>
+      <div id="login-line"></div>
+      <div id="login-description">
+        <div id="input-container">
+          <div class="input">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" style="display: block;">
+              <g clip-path="url(#a)"><path fill="#595959" fill-rule="evenodd" d="M8.005.034h-.007a7.966 7.966 0 1 0 3.088 15.32.858.858 0 0 0-.66-1.584A6.25 6.25 0 1 1 8 1.75a6.354 6.354 0 0 1 5.44 3.142l.007.01c1.37 2.264.697 4.017-.109 4.8-.445.433-.811.476-.922.45-.029-.006-.057-.017-.097-.08-.05-.082-.126-.274-.126-.648V7.992a4.138 4.138 0 1 0-1.304 3.025c.274.42.674.697 1.14.805.913.21 1.846-.254 2.504-.892 1.398-1.357 2.148-3.992.384-6.91A8.069 8.069 0 0 0 8.005.033Zm.01 5.543a2.423 2.423 0 1 1 .08 4.846 2.423 2.423 0 0 1-.08-4.846Z" clip-rule="evenodd"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs>
+            </svg>
+            <input type="txt" placeholder="이메일을 입력하세요">
+          </div>
+          <div class="input">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" style="display: block;">
+              <path fill="#595959" fill-rule="evenodd" d="M12 7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2V5a4 4 0 0 1 8 0v2ZM8 2.333A2.667 2.667 0 0 1 10.667 5v2H5.333V5A2.667 2.667 0 0 1 8 2.333Zm4 6H4A.667.667 0 0 0 3.333 9v4a.667.667 0 0 0 .667.667h8a.667.667 0 0 0 .667-.667V9A.667.667 0 0 0 12 8.333Z" clip-rule="evenodd"/>
+            </svg>
+            <input type="password" placeholder="비밀번호를 입력하세요">
+          </div>          
+        </div>
+        <div id="auth">
+          <div id="keep-login">
+            <input type="checkbox">
+            <p> 로그인 유지하기 </p>
+          </div>
+          <a href=""> 비밀번호를 잊으셨나요? </a>
+        </div>
+        <div id="login-btn-container">
+          <button id="login-btn"> 로그인 </button>
+          <p> 계정이 없으신가요? <span id="login-highlight"> 회원가입하기 </span> </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/script/loadHTML.js"></script>
+</body>
+</html>

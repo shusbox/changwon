@@ -13,3 +13,4 @@ function loadHTML(id, url, jsPath = null) {
 }
 
 loadHTML("header", "/page/header.html");
+loadHTML("header_auth", "/page/header_auth.html");
