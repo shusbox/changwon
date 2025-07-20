@@ -3,8 +3,9 @@ from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from database import SessionLocal, engine
 from models import Base
-from crud import verify_login
+from crud import get_user_by_email, create_user, verify_login
 from pydantic import BaseModel, EmailStr
+from schemas import UserCreate
 
 Base.metadata.create_all(bind=engine)
 
