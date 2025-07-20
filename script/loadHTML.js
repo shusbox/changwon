@@ -12,5 +12,4 @@ function loadHTML(id, url, jsPath = null) {
   });
 }
 
-loadHTML("nav", "/html/nav.html");
-loadHTML("footer", "/html/footer.html");
+loadHTML("header", "/page/header.html");
