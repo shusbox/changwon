@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 회원가입 </title>
+
+  <link rel="icon" href="/resource/icon/favicon.svg">
+  
+  <link rel="stylesheet" href="/css/header_auth.css">
+  <link rel="stylesheet" href="/css/login.css">
+
+  <style>
+    html, body {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="header_auth"></div>
+
+  <main>
+    <div id="title">
+      <h1> 회원가입 </h1>
+      <p> 회원가입을 통해 더 많은 기능과 혜택을 이용해보세요 </p>
+    </div>
+    <div id="login-container">
+      <div id="login-with-container">
+        <div class="login-with">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" style="display: block;">
+            <path fill="#595959" d="M5 10a5 5 0 0 0 9.716 1.667H10V8.333h8.17v3.334h-.003a8.333 8.333 0 1 1-1.265-6.34L14.17 7.24A5 5 0 0 0 5 10Z"/>
+          </svg>
+          <p> 구글로 회원가입 </p>
+        </div>
+        <div class="login-with">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" style="display: block;">
+            <path fill="#595959" d="M14.208 16.9c-.816.792-1.708.667-2.566.292-.909-.384-1.742-.4-2.7 0-1.2.516-1.834.366-2.55-.292-4.067-4.192-3.467-10.575 1.15-10.808 1.125.058 1.908.616 2.566.666.984-.2 1.925-.775 2.975-.7 1.259.1 2.209.6 2.834 1.5-2.6 1.559-1.984 4.984.4 5.942-.475 1.25-1.092 2.492-2.117 3.408l.008-.008ZM10.025 6.042C9.9 4.183 11.408 2.65 13.142 2.5c.241 2.15-1.95 3.75-3.117 3.542Z"/>
+          </svg>
+          <p> 애플로 회원가입 </p>
+        </div>
+      </div>
+      <div id="login-line"></div>
+      <div id="login-description">
+        <div id="input-container">
+          <div class="input">
+            <input type="txt" placeholder="이메일을 입력하세요">
+          </div>
+          <div class="input">
+            <input type="password" placeholder="비밀번호를 입력하세요">
+          </div>          
+        </div>
+        <div id="login-btn-container">
+          <button id="login-btn" style="margin-top: 32px;"> 회원가입 </button>
+          <p> 이미 계정이 존재하시나요? <span id="login-highlight" onclick="location.href='/page/login.html'"> 로그인하기 </span> </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/script/loadHTML.js"></script>
+  <script>
+    document.getElementById("login-btn").addEventListener("click", async () => {
+      const email = document.querySelector("input[type='txt']").value;
+      const password = document.querySelector("input[type='password']").value;
+
+      const res = await fetch("http://127.0.0.1:8000/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert("🎉 회원가입 성공!");
+        location.href = "/page/login.html";
+      } else {
+        alert("❌ 실패: " + data.detail);
+      }
+    });
+  </script>
+</body>
+</html>

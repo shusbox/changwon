@@ -46,13 +46,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" style="display: block;">
               <g clip-path="url(#a)"><path fill="#595959" fill-rule="evenodd" d="M8.005.034h-.007a7.966 7.966 0 1 0 3.088 15.32.858.858 0 0 0-.66-1.584A6.25 6.25 0 1 1 8 1.75a6.354 6.354 0 0 1 5.44 3.142l.007.01c1.37 2.264.697 4.017-.109 4.8-.445.433-.811.476-.922.45-.029-.006-.057-.017-.097-.08-.05-.082-.126-.274-.126-.648V7.992a4.138 4.138 0 1 0-1.304 3.025c.274.42.674.697 1.14.805.913.21 1.846-.254 2.504-.892 1.398-1.357 2.148-3.992.384-6.91A8.069 8.069 0 0 0 8.005.033Zm.01 5.543a2.423 2.423 0 1 1 .08 4.846 2.423 2.423 0 0 1-.08-4.846Z" clip-rule="evenodd"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs>
             </svg>
-            <input type="txt" placeholder="이메일을 입력하세요">
+            <input type="txt" placeholder="이메일을 입력하세요" id="email">
           </div>
           <div class="input">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" style="display: block;">
               <path fill="#595959" fill-rule="evenodd" d="M12 7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2V5a4 4 0 0 1 8 0v2ZM8 2.333A2.667 2.667 0 0 1 10.667 5v2H5.333V5A2.667 2.667 0 0 1 8 2.333Zm4 6H4A.667.667 0 0 0 3.333 9v4a.667.667 0 0 0 .667.667h8a.667.667 0 0 0 .667-.667V9A.667.667 0 0 0 12 8.333Z" clip-rule="evenodd"/>
             </svg>
-            <input type="password" placeholder="비밀번호를 입력하세요">
+            <input type="password" placeholder="비밀번호를 입력하세요" id="password">
           </div>          
         </div>
         <div id="auth">
@@ -64,12 +64,13 @@
         </div>
         <div id="login-btn-container">
           <button id="login-btn"> 로그인 </button>
-          <p> 계정이 없으신가요? <span id="login-highlight"> 회원가입하기 </span> </p>
+          <p> 계정이 없으신가요? <span id="login-highlight" onclick="location.href='/page/signup.html'"> 회원가입하기 </span> </p>
         </div>
       </div>
     </div>
   </main>
 
   <script src="/script/loadHTML.js"></script>
+  <script src="/script/login.js"></script>
 </body>
 </html>

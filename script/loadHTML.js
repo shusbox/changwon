@@ -12,5 +12,5 @@ function loadHTML(id, url, jsPath = null) {
   });
 }
 
-loadHTML("header", "/page/header.html");
-loadHTML("header_auth", "/page/header_auth.html");
+loadHTML("header", "/page/header.html", "/script/header.js");
+loadHTML("header_auth", "/page/header_auth.html", "/script/header.js");
