@@ -29,6 +29,7 @@
 #select-nav p {
   margin: 0;
   padding: 16px 24px;
+  padding-top: 0;
   color: #D0D0D0;
   font-size: 20px;
   font-weight: 300;
@@ -49,7 +50,28 @@
   background-color: currentColor;
 }
 
-#history {
+#history_1 {
+  display: none;
+}
+
+#history_2 {
+  display: none;
+}
+
+#history_3 {
+  display: none;
+}
+
+#history_4 {
+  display: none;
+}
+
+#history_5 {
+  display: none;
+}
+
+#history_6 {
+  display: block;
   padding: 80px 0;
   background-color: #F9F9F9;
 }
@@ -112,4 +134,8 @@
   margin: 0;
   font-size: 18px;
   font-weight: 300;
+}
+
+#history_7 {
+  display: none;
 }
