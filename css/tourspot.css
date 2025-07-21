@@ -70,10 +70,30 @@ main {
   overflow: hidden;
 }
 
-.card-txt h1 {
+.card-save {
+  display: none;
+}
+
+.card-save path {
+  fill: #E2E2E2;
+}
+
+.card-txt-title {
+  cursor: default;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-txt-title h1 {
   margin: 0;
   font-size: 28px;
   font-weight: 500;
+}
+
+.card-txt-title:hover .card-save {
+  cursor: pointer;
+  display: block;
 }
 
 .card-txt p {

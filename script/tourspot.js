@@ -19,7 +19,12 @@ function renderCard(data) {
             <p> ${item.tag_2} </p>
           </div>
           <div class="card-txt">
-            <h1> ${item.root} </h1>
+            <div class="card-txt-title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" fill="none" class="card-save">
+                <path fill="#44BBBD" d="M11.665.5c-.75.012-1.484.22-2.128.605A4.255 4.255 0 0 0 8 2.69a4.255 4.255 0 0 0-1.537-1.585A4.278 4.278 0 0 0 4.335.5 4.54 4.54 0 0 0 1.2 1.95 4.502 4.502 0 0 0 .003 5.179c0 3.017 3.19 6.313 5.865 8.547a3.323 3.323 0 0 0 4.264 0c2.675-2.234 5.865-5.53 5.865-8.547a4.502 4.502 0 0 0-1.197-3.23A4.54 4.54 0 0 0 11.665.5Z"/>
+              </svg>
+              <h1> ${item.root} </h1>
+            </div>
             <p> ${item.description} </p>
           </div>
           <button> 자세히 </button>    
