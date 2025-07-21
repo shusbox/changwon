@@ -25,7 +25,8 @@ main {
 }
 
 .card {
-  transition: 0.2s;
+  cursor: default;
+  transition: 0.3s;
   width: 340px;
   height: 428px;
   flex-shrink: 0;
@@ -106,7 +107,7 @@ main {
 }
 
 .card-txt p {
-  transition: 0.2s;
+  transition: 0.3s;
   margin: 0;
   overflow: hidden;
   color: #838383;
@@ -121,11 +122,13 @@ main {
 }
 
 .card:hover .card-txt {
-  transition: 0.2s;
+  transition: 0.3s;
   min-height: 156px;
 }
 
 .card-description button {
+  transition: 0.2s;
+  cursor: pointer;
   width: 100%;
   padding: 14px 0;
   color: white;
@@ -134,4 +137,9 @@ main {
   border: none;
   border-radius: 12px;
   background-color: #44BBBD;
+}
+
+.card-description button:hover {
+  transition: 0.2s;
+  background-color: #37afb1;
 }

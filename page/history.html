@@ -55,5 +55,13 @@
   <script src="/script/loadHTML.js"></script>
   <script src="/script/rendering.js"></script>
   <script src="/script/history.js"></script>
+
+  <script>
+    loadHTML("header", "/page/header.html", "/script/header.js").then(() => {
+      document.getElementById('banner-title').querySelector('h1').textContent = "역사";
+      document.getElementById('banner-title').querySelector('p').textContent = "산과 바다, 산업과 문화가 어우러진 창원의 발자취";
+      document.getElementById('banner-img').src = "/resource/배경/history.png";
+    });
+  </script>
 </body>
 </html>

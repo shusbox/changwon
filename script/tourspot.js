@@ -42,7 +42,7 @@ async function renderCard(data) {
           </div>
           <p>${item.description}</p>
         </div>
-        <button>자세히</button>    
+        <button>자세히</button>
       </div>
     `;
 
