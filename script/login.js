@@ -12,14 +12,11 @@ document.getElementById("login-btn").addEventListener("click", async () => {
 
   const data = await res.json();
   if (res.ok) {
-    alert("✅ 로그인 성공!");
-
-    // 👉 이메일을 저장하고
-    localStorage.setItem("user_email", data.email);  // 또는 user_name
-
-    // 👉 index.html로 이동
+    localStorage.setItem("user_email", data.email);
     location.href = "/index.html";
-  }else {
-    alert("❌ 로그인 실패: " + data.detail);
+  } else if (email === '' || password === '') {
+    alert("이메일과 비밀번호를 모두 입력해주세요.")
+  } else {
+    alert("아이디 혹은 비밀번호가 일치하지 않거나, 존재하지 않는 아이디입니다.");
   }
 });

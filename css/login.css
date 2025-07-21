@@ -4,6 +4,7 @@ body {
 }
 
 #title {
+  cursor: default;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -41,6 +42,7 @@ body {
 }
 
 .login-with {
+  transition: 0.2s;
   width: 100%;
   padding: 4px 24px;
   display: flex;
@@ -49,6 +51,12 @@ body {
   color: #595959;
   border-radius: 12px;
   background-color: #F6F6F6;
+}
+
+.login-with:hover {
+  transition: 0.2s;
+  cursor: pointer;
+  background-color: #ececec;
 }
 
 #login-line {
@@ -67,6 +75,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
 }
 
@@ -76,14 +85,25 @@ body {
   padding: 18px;
   display: flex;
   align-content: center;
-  gap: 12px;
+  justify-content: space-between;
   border: 2px solid #F1F1F1;
   border-radius: 12px;
 }
 
 .input input {
+  width: 342px;
+  padding: 0;
+  height: 16px;
   font-size: 16px;
   border: none;
+}
+
+.input input::placeholder {
+  color: #595959;
+}
+
+.input input:focus {
+  outline: none;
 }
 
 #auth {
@@ -97,6 +117,12 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+#keep-login input {
+  width: 16px;
+  height: 16px;
+  accent-color: #44BBBD;
 }
 
 #auth a {
@@ -113,6 +139,7 @@ body {
 }
 
 #login-btn {
+  transition: 0.2s;
   width: 100%;
   padding: 16px;
   color: white;
@@ -123,11 +150,18 @@ body {
   background-color: #44BBBD;
 }
 
+#login-btn:hover {
+  transition: 0.2s;
+  background-color: #36a9ab;
+}
+
 #login-btn-container p {
   font-weight: 300;
   text-align: center;
 }
 
 #login-highlight {
+  cursor: pointer;
+  margin-left: 8px;
   color: #44BBBD;
 }
