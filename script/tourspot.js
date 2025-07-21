@@ -6,32 +6,78 @@ const card_data = [
   { root: '돝섬해상유원지', tag_1: '산책', tag_2: '섬', description: '마산만에 그림 같이 자리한 돝섬은 섬 전체가 해상유원지로 조성되어 있으며 다양한 볼거리와 해양레포츠 체험 등을 갖춘 친환경적인 가족공원이다. 돝섬해상유원지는 국내 최초의 해상유원지로 섬의 모양이 돼지 누운 모습이라 하여 돼지의 옛말인 ‘돝’을 따와 돝섬이라 불렀다는 전설이 전해지며 돝섬 내 산책로를 걷다 보면 백합나무와 팽나무 등의 웅장한 교목들을 만날 수 있고 해안산책로에서는 인근의 마산 시가지와 합포만의 전경을 감상할 수 있다.' }
 ];
 
-function renderCard(data) {
+async function renderCard(data) {
   const container = document.getElementById('card-container');
+  const email = localStorage.getItem("user_email");
+  let likedList = [];
+
+  if (email) {
+    try {
+      const res = await fetch(`http://127.0.0.1:8000/my-likes?email=${email}`);
+      likedList = await res.json();
+    } catch (err) {
+      console.error("찜 목록을 불러오는 데 실패했습니다.");
+    }
+  }
 
   data.forEach(item => {
-    const element = `
-      <div class="card">
-        <img src="/resource/tourspot/${item.root}/main.png">
-        <div class="card-description">
-          <div class="card-tag">
-            <p> ${item.tag_1} </p>
-            <p> ${item.tag_2} </p>
-          </div>
-          <div class="card-txt">
-            <div class="card-txt-title">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" fill="none" class="card-save">
-                <path fill="#44BBBD" d="M11.665.5c-.75.012-1.484.22-2.128.605A4.255 4.255 0 0 0 8 2.69a4.255 4.255 0 0 0-1.537-1.585A4.278 4.278 0 0 0 4.335.5 4.54 4.54 0 0 0 1.2 1.95 4.502 4.502 0 0 0 .003 5.179c0 3.017 3.19 6.313 5.865 8.547a3.323 3.323 0 0 0 4.264 0c2.675-2.234 5.865-5.53 5.865-8.547a4.502 4.502 0 0 0-1.197-3.23A4.54 4.54 0 0 0 11.665.5Z"/>
-              </svg>
-              <h1> ${item.root} </h1>
-            </div>
-            <p> ${item.description} </p>
-          </div>
-          <button> 자세히 </button>    
+    const isLiked = likedList.includes(item.root);
+
+    const element = document.createElement('div');
+    element.classList.add('card');
+
+    element.innerHTML = `
+      <img src="/resource/tourspot/${item.root}/main.png">
+      <div class="card-description">
+        <div class="card-tag">
+          <p>${item.tag_1}</p>
+          <p>${item.tag_2}</p>
         </div>
+        <div class="card-txt">
+          <div class="card-txt-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" fill="none" class="card-save ${isLiked ? "liked" : ""}" data-root="${item.root}">
+              <path d="M11.665.5c-.75.012-1.484.22-2.128.605A4.255 4.255 0 0 0 8 2.69a4.255 4.255 0 0 0-1.537-1.585A4.278 4.278 0 0 0 4.335.5 4.54 4.54 0 0 0 1.2 1.95 4.502 4.502 0 0 0 .003 5.179c0 3.017 3.19 6.313 5.865 8.547a3.323 3.323 0 0 0 4.264 0c2.675-2.234 5.865-5.53 5.865-8.547a4.502 4.502 0 0 0-1.197-3.23A4.54 4.54 0 0 0 11.665.5Z"/>
+            </svg>
+            <h1>${item.root}</h1>
+          </div>
+          <p>${item.description}</p>
+        </div>
+        <button>자세히</button>    
       </div>
     `;
-    container.insertAdjacentHTML('beforeend', element);
+
+    const saveIcon = element.querySelector('.card-save');
+    saveIcon.addEventListener('click', async () => {
+      const email = localStorage.getItem("user_email");
+
+      if (!email) {
+        alert("로그인 후 이용할 수 있습니다.");
+        return;
+      }
+
+      const spotRoot = saveIcon.dataset.root;
+
+      try {
+        const res = await fetch("http://127.0.0.1:8000/toggle-like", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email, spot_root: spotRoot })
+        });
+        const result = await res.json();
+
+        if (result.liked) {
+          saveIcon.classList.add("liked");
+          saveIcon.querySelector("path").style.fill = "#44BBBD";
+        } else {
+          saveIcon.classList.remove("liked");
+          saveIcon.querySelector("path").style.fill = "#E2E2E2";
+        }
+      } catch (err) {
+        alert("찜 요청 중 오류가 발생했습니다.");
+      }
+    });
+
+    container.appendChild(element);
   });
 }
-renderCard(card_data);
+renderCard(card_data)

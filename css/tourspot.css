@@ -71,11 +71,20 @@ main {
 }
 
 .card-save {
-  display: none;
+  display: none; /* 기본적으로 숨김 */
+  cursor: pointer;
+}
+
+.card-save.liked {
+  display: block !important; /* 찜한 상태는 항상 표시 */
 }
 
 .card-save path {
-  fill: #E2E2E2;
+  fill: #E2E2E2; /* 기본 회색 */
+}
+
+.card-save.liked path {
+  fill: #44BBBD !important; /* 찜한 상태 파란색 */
 }
 
 .card-txt-title {
