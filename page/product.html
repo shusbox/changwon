@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 창원 | 특산물 </title>
+
+  <link rel="icon" href="/resource/icon/favicon.svg">
+
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/product.css">
+
+  <style>
+    html, body {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <main>
+    <div id="card-container"></div>
+  </main>
+
+  <script src="/script/loadHTML.js"></script>
+  <script src="/script/product.js"></script>
+
+  <script>
+    loadHTML("header", "/page/header.html", "/script/header.js").then(() => {
+      document.getElementById('banner-title').querySelector('h1').textContent = "특산물";
+      document.getElementById('banner-title').querySelector('p').textContent = "자연과 정성이 담긴 창원의 대표 특산물";
+      document.getElementById('banner-img').src = "/resource/배경/product.png";
+    });
+  </script>
+</body>
+</html>
